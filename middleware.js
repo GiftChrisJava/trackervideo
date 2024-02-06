@@ -12,7 +12,7 @@ export async function middleware(req) {
   } = await supabase.auth.getUser();
 
   console.log(req.nextUrl.pathname);
-  console.log(user);
+  console.log("pathname ", req.nextUrl.pathname);
 
   // if user is authenticated send to videos page
   if (user && req.nextUrl.pathname === "/") {
