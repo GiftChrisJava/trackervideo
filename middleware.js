@@ -15,15 +15,16 @@ export async function middleware(req) {
 
   // if user is authenticated send to videos page
   if (user && req.nextUrl.pathname === "/") {
-    return NextResponse.redirect(new URL("/videos", req.url));
     console.log("auth ", user);
     console.log("pathname in middle authenticated", req.nextUrl.pathname);
+    return NextResponse.redirect(new URL("/videos", req.url));
   }
 
   // if not logged in and not going to the home route, the redirect to home route
   if (user && req.nextUrl.pathname !== "/") {
-    return NextResponse.redirect(new URL("/"));
     console.log("unauth ", user);
+
+    return NextResponse.redirect(new URL("/"));
   }
 
   return res;
