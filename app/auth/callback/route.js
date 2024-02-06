@@ -7,6 +7,7 @@ export async function GET(req) {
   const supabase = createRouteHandlerClient({ cookies: () => cookieStore });
 
   const { searchParams } = new URL(req.url);
+  console.log(searchParams, "searchParams");
 
   const code = searchParams.get("code");
 

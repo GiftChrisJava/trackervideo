@@ -29,5 +29,5 @@ export async function middleware(req) {
 
 // run this middleware on these routes
 export const config = {
-  matcher: ["https://trackervideo.vercel.app/", "/videos"],
+  matcher: ["/", "/videos"],
 };
