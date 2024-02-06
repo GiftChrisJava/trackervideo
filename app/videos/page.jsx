@@ -12,8 +12,6 @@ export default async function VideoList() {
   } = await supabase.auth.getSession();
   const user = session?.user;
 
-  console.log(user);
-
   const { data: videos, er } = await supabase.from("videos").select("*");
 
   if (er) {

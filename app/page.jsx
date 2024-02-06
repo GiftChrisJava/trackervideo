@@ -1,5 +1,3 @@
-import AuthForm from "./components/AuthForm";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-300">
@@ -13,7 +11,13 @@ export default function Home() {
         </p>
 
         <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <AuthForm />
+          <button>
+            <a href="/login">Login</a>
+          </button>
+
+          <button>
+            <a href="/register">Register</a>
+          </button>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ const VideoPlayer = ({ video }) => {
   const videoId = video[0].id;
 
   const [progressTime, setProgressTime] = useState(0);
-  const [playerReady, setPlayerReady] = useState(true);
+  const [playerReady, setPlayerReady] = useState(false);
   const hasMounted = useRef(false);
   const playerRef = useRef(null);
 
@@ -43,7 +43,10 @@ const VideoPlayer = ({ video }) => {
 
   const onPlayerReady = (event) => {
     setPlayerReady(true);
-    event.target.seekTo(progressTime); // Seek to stored progress
+
+    if (progressTime > 0) {
+      event.target.seekTo(progressTime); // Seek to stored progress
+    }
   };
 
   const onPlayerStateChange = (event) => {
@@ -65,25 +68,23 @@ const VideoPlayer = ({ video }) => {
     width: "70%",
     playerVars: {
       // Enable progress tracking
+      autoplay: 0,
+
       enablejsapi: 1,
       controls: 1,
       playsinline: 1,
-      autoplay: 0,
     },
   };
 
   return (
     <div className="mx-auto w-full">
-      {!playerReady && <p>Loading player...</p>}
-      {playerReady && (
-        <YouTube
-          videoId={youtubeVideoId}
-          opts={opts}
-          onReady={onPlayerReady}
-          onStateChange={onPlayerStateChange}
-          ref={playerRef}
-        />
-      )}
+      <YouTube
+        videoId={youtubeVideoId}
+        opts={opts}
+        onReady={onPlayerReady}
+        onStateChange={onPlayerStateChange}
+        ref={playerRef}
+      />
     </div>
   );
 };

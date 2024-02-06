@@ -1,8 +1,9 @@
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req) {
+  const url = new URL(req.url);
   const cookieStore = cookies();
   const supabase = createRouteHandlerClient({ cookies: () => cookieStore });
 
@@ -14,5 +15,5 @@ export async function POST(req) {
     await supabase.auth.signOut();
   }
 
-  return NextResponse.redirect(new URL("/", req.url), { status: 302 });
+  return NextResponse.redirect(url.origin, { status: 301 });
 }
