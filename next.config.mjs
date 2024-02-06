@@ -1,9 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Other configurations...
-
-  // Customizing the production base URL
-  basePath: "https://trackervideo.vercel.app/",
-};
+const nextConfig = {};
 
 export default nextConfig;
