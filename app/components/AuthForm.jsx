@@ -12,7 +12,7 @@ export default function AuthForm() {
       view="magic_link"
       showLinks={false}
       providers={[]} // nothing here
-      redirectTo="https://trackervideo.vercel.app//auth/callback" // vercel
+      redirectTo="https://trackervideo.vercel.app/auth/callback" // vercel
       appearance={{
         theme: "dark",
         button: {

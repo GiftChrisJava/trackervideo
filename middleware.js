@@ -11,6 +11,9 @@ export async function middleware(req) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  console.log(req.nextUrl.pathname);
+  console.log(user);
+
   // if user is authenticated send to videos page
   if (user && req.nextUrl.pathname === "/") {
     return NextResponse.redirect(new URL("/videos", req.url));
@@ -26,5 +29,5 @@ export async function middleware(req) {
 
 // run this middleware on these routes
 export const config = {
-  matcher: ["/", "/videos"],
+  matcher: ["https://trackervideo.vercel.app/", "/videos"],
 };
