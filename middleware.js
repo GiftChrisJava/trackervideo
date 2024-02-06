@@ -12,16 +12,18 @@ export async function middleware(req) {
   } = await supabase.auth.getUser();
 
   console.log(req.nextUrl.pathname);
-  console.log("pathname ", req.nextUrl.pathname);
 
   // if user is authenticated send to videos page
   if (user && req.nextUrl.pathname === "/") {
     return NextResponse.redirect(new URL("/videos", req.url));
+    console.log("auth ", user);
+    console.log("pathname in middle authenticated", req.nextUrl.pathname);
   }
 
   // if not logged in and not going to the home route, the redirect to home route
   if (user && req.nextUrl.pathname !== "/") {
     return NextResponse.redirect(new URL("/"));
+    console.log("unauth ", user);
   }
 
   return res;
