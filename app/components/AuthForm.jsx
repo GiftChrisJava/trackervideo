@@ -1,5 +1,4 @@
 "use client";
-
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Auth } from "@supabase/auth-ui-react";
 
@@ -13,7 +12,7 @@ export default function AuthForm() {
       view="magic_link"
       showLinks={false}
       providers={[]} // nothing here
-      redirectTo="https://progresstracker-three.vercel.app/auth/callback" // vercel
+      redirectTo="https://trackervideo.vercel.app//auth/callback" // vercel
       appearance={{
         theme: "dark",
         button: {
