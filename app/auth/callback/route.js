@@ -5,9 +5,9 @@ import { NextResponse } from "next/server";
 export async function GET(req) {
   const cookieStore = cookies();
   const supabase = createRouteHandlerClient({ cookies: () => cookieStore });
+  console.log(req.url, "url in callback");
 
   const { searchParams } = new URL(req.url);
-  console.log(searchParams, "searchParams in callback");
 
   const code = searchParams.get("code");
 
