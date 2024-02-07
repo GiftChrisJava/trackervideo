@@ -42,7 +42,7 @@ const VideoPlayer = ({ video }) => {
   }, [videoId, duration]); // Depend on videoId, duration, and playerReady
 
   const onPlayerReady = (event) => {
-    setPlayerReady(true);
+    // setPlayerReady(true);
 
     if (progressTime > 0) {
       event.target.seekTo(progressTime); // Seek to stored progress
