@@ -24,7 +24,7 @@ export default function Home() {
 
       <div className="container  p-6">
         <h1 className="text-2xl font-extrabold text mb-6 text-gray-200">
-          Malawi Education Enhancement Program
+          Malawi Education Enhancement Platform
         </h1>
         <p className="text-lg text-gray-300 mb-10">
           Expand your knowledge and understand complex lessons taught in class
