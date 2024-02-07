@@ -1,11 +1,32 @@
+/* eslint-disable jsx-a11y/alt-text */
+import Image from "next/image";
+import image3 from "../public/img3.jpeg";
+import image2 from "../public/img2.jpeg";
+import image1 from "../public/img1.jpeg";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-900 mt-6">
-      <div className="container mx-auto max-w-md p-6 ">
+    <div className="min-h-screen bg-gray-900 mt-14 mx-auto max-w-md">
+      <div className="flex justify-between">
+        <Image
+          src={image3}
+          className="block h-24 w-24 rounded-full object-cover mx-auto mb-6"
+        />
+        <Image
+          src={image2}
+          className="block h-24 w-24 rounded-full object-cover mx-auto mb-6"
+        />{" "}
+        <Image
+          src={image1}
+          className="block h-24 w-24 rounded-full object-cover mx-auto mb-6"
+        />
+      </div>
+
+      <div className="container  p-6">
         <h1 className="text-2xl font-extrabold text mb-6 text-gray-200">
           Malawi Education Enhancement Program
         </h1>
-        <p className="text-lg text-gray-300 mb-6 ">
+        <p className="text-lg text-gray-300 mb-10">
           Expand your knowledge and understand complex lessons taught in class
           by watching videos, reading docs and practice quizez
         </p>
