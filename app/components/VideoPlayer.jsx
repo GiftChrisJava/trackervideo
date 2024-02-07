@@ -12,7 +12,7 @@ const VideoPlayer = ({ video }) => {
   const videoId = video[0].id;
 
   const [progressTime, setProgressTime] = useState(0);
-  const [playerReady, setPlayerReady] = useState(false);
+  // const [playerReady, setPlayerReady] = useState(false);
   const hasMounted = useRef(false);
   const playerRef = useRef(null);
 
@@ -22,7 +22,7 @@ const VideoPlayer = ({ video }) => {
 
       if (progressData.length !== 0) {
         setProgressTime(progressData[0].progress_time);
-        setPlayerReady(true);
+        // setPlayerReady(true);
       } else {
         await createInitialProgress(videoId, duration);
         return;

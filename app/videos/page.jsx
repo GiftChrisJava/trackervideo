@@ -18,6 +18,7 @@ export default async function VideoList() {
     console.error("Error fetching videos");
   }
   console.log(videos);
+  console.log(user);
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-300">
