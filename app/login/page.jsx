@@ -10,6 +10,7 @@ export default function page() {
           Email
         </label>
         <input
+          required
           type="text"
           name="email"
           id="email"
@@ -22,6 +23,7 @@ export default function page() {
           Password
         </label>
         <input
+          required
           type="password"
           name="password"
           id="password"
@@ -32,7 +34,7 @@ export default function page() {
             Login
           </button>
 
-          <p className="text-gray-200 hover:text-gray-400 hover:cursor-pointer font-bold rounded-lg shadow-xl py-2 px-3 hover:border hover:border-gray-200">
+          <p className="text-gray-300 hover:text-gray-400 hover:cursor-pointer rounded-lg py-2 px-3 hover:border hover:border-gray-200">
             <a href="/register">Create account ?</a>
           </p>
         </div>
