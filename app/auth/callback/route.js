@@ -12,7 +12,7 @@ export async function GET(req) {
 
     await supabase.auth.exchangeCodeForSession(code);
   }
-  return NextResponse.redirect(new URL("/login", url.origin));
+  return NextResponse.redirect(new URL("/message", url.origin));
 
   // return NextResponse.redirect("/login");
 }
