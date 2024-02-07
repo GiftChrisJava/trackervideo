@@ -19,7 +19,7 @@ async function POST(req) {
 
   if (error) {
     console.log(error);
-    return NextResponse.redirect(new URL("/login", url.origin));
+    return NextResponse.redirect(new URL("/", url.origin));
   }
 
   return NextResponse.redirect(new URL("/videos", url.origin));

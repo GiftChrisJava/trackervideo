@@ -28,7 +28,7 @@ export default function Home() {
         </h1>
         <p className="text-lg text-gray-300 mb-10">
           Expand your knowledge and understand complex lessons taught in class
-          by watching videos, reading docs and practice quizez
+          by watching videos, reading articles and practice quizez
         </p>
 
         <div className=" flex justify-between">

@@ -35,7 +35,7 @@ export default function page() {
             Sign Up
           </button>
 
-          <p className="text-gray-300 hover:text-gray-400 hover:cursor-pointer rounded-lg py-2 px-3 hover:border hover:border-gray-200">
+          <p className="text-gray-300 hover:text-gray-400 hover:cursor-pointer rounded-lg py-2 px-3">
             <a href="/login">Already have an account</a>
           </p>
         </div>

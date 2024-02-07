@@ -35,8 +35,8 @@ export default function page() {
             Login
           </button>
 
-          <p className="text-gray-300 hover:text-gray-400 hover:cursor-pointer rounded-lg py-2 px-3 hover:border hover:border-gray-200">
-            <a href="/register">Create account ?</a>
+          <p className="text-gray-300 hover:text-gray-400 hover:cursor-pointer rounded-lg py-2 px-3">
+            <a href="/register">I do not have an account</a>
           </p>
         </div>
       </form>
