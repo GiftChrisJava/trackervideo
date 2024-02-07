@@ -21,5 +21,5 @@ export async function POST(req) {
     },
   });
 
-  return NextResponse.redirect(url.origin, { status: 301 });
+  return NextResponse.redirect(`${url.origin}/message`, { status: 301 });
 }

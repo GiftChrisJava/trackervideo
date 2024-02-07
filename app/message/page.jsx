@@ -10,7 +10,7 @@ export default function page() {
       </h4>
 
       <p className="text-center text-gray-400 mb-4 font-semibold text-sm">
-        Identified as <span className="font-bold text-gray-200">noreply</span>
+        from <span className="font-bold text-gray-200">noreply</span>
       </p>
     </div>
   );

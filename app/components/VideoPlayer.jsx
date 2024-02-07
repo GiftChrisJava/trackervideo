@@ -69,7 +69,6 @@ const VideoPlayer = ({ video }) => {
     playerVars: {
       // Enable progress tracking
       autoplay: 0,
-
       enablejsapi: 1,
       controls: 1,
       playsinline: 1,
