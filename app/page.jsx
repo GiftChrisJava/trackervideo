@@ -10,15 +10,15 @@ export default function Home() {
       <div className="flex justify-between">
         <Image
           src={image3}
-          className="block h-24 w-24 rounded-full object-cover mx-auto mb-6"
+          className="h-24 w-24 rounded-full hidden md:flex object-cover mx-auto mb-6"
         />
         <Image
           src={image2}
-          className="block h-24 w-24 rounded-full object-cover mx-auto mb-6"
-        />{" "}
+          className="h-24 w-24 rounded-full object-cover mx-auto mb-6"
+        />
         <Image
           src={image1}
-          className="block h-24 w-24 rounded-full object-cover mx-auto mb-6"
+          className="h-24 w-24 rounded-full hidden md:flex object-cover mx-auto mb-6"
         />
       </div>
 
