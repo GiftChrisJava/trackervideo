@@ -17,7 +17,7 @@ export async function POST(req) {
     email,
     password,
     options: {
-      emailRedirectTo: `${url.origin}/auth/callback`,
+      emailRedirectTo: `https://trackervideo.vercel.app/auth/callback/auth/callback`,
     },
   });
 
