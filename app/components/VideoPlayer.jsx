@@ -65,7 +65,7 @@ const VideoPlayer = ({ video }) => {
 
   const opts = {
     height: "420px",
-    width: "70%",
+    width: "100%",
     playerVars: {
       // Enable progress tracking
       autoplay: 0,

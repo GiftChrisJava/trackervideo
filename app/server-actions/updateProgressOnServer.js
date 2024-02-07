@@ -33,6 +33,8 @@ export async function updateProgressOnServer(videoId, currentTime) {
     return;
   }
 
+  console.log(data);
+
   console.log("updated");
   return { message: "Success" };
 }

@@ -27,6 +27,8 @@ export async function createInitialProgress(videoId, duration) {
     },
   ]);
 
+  console.log(data, " in create");
+
   if (error) {
     console.error("Error inserting data", error);
     return;
