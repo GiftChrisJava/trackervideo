@@ -1,32 +1,33 @@
+/* eslint-disable jsx-a11y/alt-text */
 "use client";
+
+import Image from "next/image";
+import image3 from "../../public/img3.jpeg";
+
 export default function page() {
   return (
     <div className="bg-gray-800 p-4 rounded-lg mx-auto max-w-sm mt-24">
+      <div className="flex justify-between">
+        <Image
+          src={image3}
+          className="h-24 w-24 rounded-full  object-cover mx-auto mb-11"
+        />
+      </div>
       <form action="../auth/signin" method="post" className="flex flex-col">
-        <label
-          htmlFor="email"
-          className="block text-gray-200 font-bold text-lg"
-        >
-          Email
-        </label>
         <input
           required
           type="text"
           name="email"
           id="email"
-          className="p-2 mb-3 text-gray-800 rounded w-full focus:outline-none focus:shadow-lg"
+          placeholder="Enter Email"
+          className="p-2 mb-8 text-gray-800 rounded w-full focus:outline-none focus:shadow-lg"
         />
-        <label
-          htmlFor="password"
-          className="block text-gray-200 font-bold text-lg"
-        >
-          Password
-        </label>
         <input
           required
           type="password"
           name="password"
           id="password"
+          placeholder="Enter Password"
           className="p-2 text-gray-800 rounded w-full focus:outline-none focus:shadow-lg"
         />
         <div className=" flex justify-between mt-8">
