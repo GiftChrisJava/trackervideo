@@ -1,43 +1,30 @@
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { NextResponse } from "next/server";
-import { createSupabaseFrontEndClient } from "./util/supabase";
-
-// Create a Supabase client with the ssr package
-const supabase = createSupabaseFrontEndClient;
 
 export async function middleware(req) {
-  const res = NextResponse.next();
+  const res = NextResponse.next(); // now go next
 
-  try {
-    // Get the user session from the Supabase client
-    const { data: session } = await supabase.auth.getSession();
-    const user = session?.user;
+  const supabase = createClientComponentClient({ req, res });
 
-    // Conditional redirects based on user and location
-    if (user) {
-      if (req.nextUrl.pathname === "/") {
-        // Redirect to videos if already authenticated at home
-        return NextResponse.redirect(new URL("/videos", req.url));
-      }
-      // Optionally, redirect to a different page based on user roles
-      // if (user.role === "admin") {
-      //   return NextResponse.redirect(new URL("/admin", req.url));
-      // }
-    } else if (req.nextUrl.pathname !== "/") {
-      // Redirect unauthenticated users to home if on other pages
-      return NextResponse.redirect(new URL("/", req.url));
-    }
-  } catch (error) {
-    // Handle errors gracefully, redirect to error page or log
-    console.error("Error fetching user session:", error);
-    // return NextResponse.redirect(new URL("/error", req.url));
+  // get the current authenticated user
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // if user is authenticated send to videos page
+  if (user && req.nextUrl.pathname === "/") {
+    return NextResponse.redirect(new URL("/videos", req.url));
+  }
+
+  // if not logged in and not going to the home route, the redirect to home route
+  if (user && req.nextUrl.pathname !== "/") {
+    return NextResponse.redirect(new URL("/"));
   }
 
   return res;
 }
 
-// Run this middleware on these routes
+// run this middleware on these routes
 export const config = {
-  matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
-  ],
+  matcher: ["/", "/videos"],
 };
